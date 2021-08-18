@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+.small-flag {
+  max-width: 60px;
+}
+
+.flag-por-pais {
+  max-height: 28px;
+}
+
+.mr-1 {
+  margin-right: 5px;
+}
