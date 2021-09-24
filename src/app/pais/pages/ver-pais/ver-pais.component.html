@@ -6,7 +6,8 @@
   <div class="row">
     <div class="col-12">
       <h2>
-        Pais: {{ pais.name }} <img [src]="pais.flag" class="flag-por-pais" />
+        Pais: {{ pais.name }}
+        <img [src]="pais.flags[1]" class="flag-por-pais" />
       </h2>
       <hr />
     </div>
@@ -23,7 +24,7 @@
         <strong>Alpha2Code: </strong> {{ pais.alpha2Code }}
       </li>
       <li class="list-group-item">
-        <strong>Región: </strong> {{ pais.subregion }}, {{ pais.region }}
+        <strong>Región: </strong> {{ pais.continent }}, {{ pais.region }}
       </li>
       <li class="list-group-item">
         <strong>Area: </strong> {{ pais.area | number }} m2
