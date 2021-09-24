@@ -27,7 +27,18 @@ export class CapitalComponent {
       }
     );
   }
-  sugerencias(termino: string) {
+
+  sugeridos(termino: string) {
     this.hayError = false;
+    this.termino = termino;
+    this.paisService.buscarCapital(this.termino).subscribe(
+      (resp) => {
+        this.paises = resp.splice(0, 5);
+      },
+      (err) => {
+        this.hayError = true;
+        this.paises = [];
+      }
+    );
   }
 }
