@@ -21,7 +21,9 @@ export class VerPaisComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params
       .pipe(switchMap(({ id }) => this.paisService.verPais(id)))
-      .subscribe((resp) => (this.pais = resp));
+      .subscribe((resp) => {
+        this.pais = resp;
+      });
 
     // this.activatedRoute.params.subscribe(({ id }) => {
     //   console.log(id);
