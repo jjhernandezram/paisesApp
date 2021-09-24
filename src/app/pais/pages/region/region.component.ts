@@ -26,6 +26,7 @@ export class RegionComponent {
     this.regionActiva = region;
     this.paisService.buscarRegion(region).subscribe((resp) => {
       this.paises = resp;
+      console.log(this.paises);
     });
   }
 
