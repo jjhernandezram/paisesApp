@@ -8,12 +8,12 @@ import { RESTPais } from '../interfaces/pais.interfaces';
   providedIn: 'root',
 })
 export class PaisService {
-  private _apiUrl: string = 'https://restcountries.eu/rest/v2';
+  private _apiUrl: string = 'https://restcountries.com/v2';
 
   get httpParams() {
     return new HttpParams().set(
       'fields',
-      'name;capital;alpha2Code;flag;population'
+      'name,capital,alpha2Code,flags,population'
     );
   }
   constructor(private http: HttpClient) {}
@@ -29,7 +29,7 @@ export class PaisService {
   }
 
   buscarRegion(query: string): Observable<RESTPais[]> {
-    const url: string = `${this._apiUrl}/region/${query}`;
+    const url: string = `${this._apiUrl}/continent/${query}`;
     return this.http.get<RESTPais[]>(url, { params: this.httpParams });
   }
 
